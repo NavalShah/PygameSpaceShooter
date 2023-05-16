@@ -17,14 +17,14 @@ BORDER = pygame.Rect(WIDTH//2 - 5, 0, 10, HEIGHT)
 #BULLET_HIT_SOUND = pygame.mixer.Sound('Assets/Grenade+1.mp3')
 #BULLET_FIRE_SOUND = pygame.mixer.Sound('Assets/Gun+Silencer.mp3')
 
-HEALTH_FONT = pygame.font.SysFont('comicsans', 40)
-WINNER_FONT = pygame.font.SysFont('comicsans', 100)
+HEALTH_FONT = pygame.font.SysFont('comic sans', 40)
+WINNER_FONT = pygame.font.SysFont('comic sans', 100)
 
-FPS = 60
-VEL = 5
+FPS = 75
+VEL = 20
 BULLET_VEL = 7
-MAX_BULLETS = 3
-SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
+MAX_BULLETS = 4
+SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 44, 32
 
 YELLOW_HIT = pygame.USEREVENT + 1
 RED_HIT = pygame.USEREVENT + 2
