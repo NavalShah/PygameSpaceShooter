@@ -14,10 +14,10 @@ YELLOW = (255, 255, 0)
 
 BORDER = pygame.Rect(WIDTH//2 - 5, 0, 10, HEIGHT)
 
-#BULLET_HIT_SOUND = pygame.mixer.Sound('Assets/Grenade+1.mp3')
-#BULLET_FIRE_SOUND = pygame.mixer.Sound('Assets/Gun+Silencer.mp3')
+BULLET_HIT_SOUND = pygame.mixer.Sound('Assets/Grenade+1.mp3')
+BULLET_FIRE_SOUND = pygame.mixer.Sound('Assets/Gun+Silencer.mp3')
 
-HEALTH_FONT = pygame.font.SysFont('comic sans', 40)
+HEALTH_FONT = pygame.font.SysFont('roboto', 40)
 WINNER_FONT = pygame.font.SysFont('comic sans', 100)
 
 FPS = 75
@@ -138,21 +138,21 @@ def main():
                     bullet = pygame.Rect(
                         yellow.x + yellow.width, yellow.y + yellow.height//2 - 2, 10, 5)
                     yellow_bullets.append(bullet)
-                    #BULLET_FIRE_SOUND.play()
+                    BULLET_FIRE_SOUND.play()
 
                 if event.key == pygame.K_RCTRL and len(red_bullets) < MAX_BULLETS:
                     bullet = pygame.Rect(
                         red.x, red.y + red.height//2 - 2, 10, 5)
                     red_bullets.append(bullet)
-                    #BULLET_FIRE_SOUND.play()
+                    BULLET_FIRE_SOUND.play()
 
             if event.type == RED_HIT:
                 red_health -= 1
-                #BULLET_HIT_SOUND.play()
+                BULLET_HIT_SOUND.play()
 
             if event.type == YELLOW_HIT:
                 yellow_health -= 1
-                #BULLET_HIT_SOUND.play()
+                BULLET_HIT_SOUND.play()
 
         winner_text = ""
         if red_health <= 0:
@@ -164,6 +164,7 @@ def main():
         if winner_text != "":
             draw_winner(winner_text)
             break
+        pygame.init()
 
         keys_pressed = pygame.key.get_pressed()
         yellow_handle_movement(keys_pressed, yellow)
