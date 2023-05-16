@@ -20,8 +20,8 @@ BULLET_FIRE_SOUND = pygame.mixer.Sound('Assets/Gun+Silencer.mp3')
 HEALTH_FONT = pygame.font.SysFont('roboto', 40)
 WINNER_FONT = pygame.font.SysFont('comic sans', 100)
 
-FPS = 75
-VEL = 20
+FPS = 60
+VEL = 5
 BULLET_VEL = 7
 MAX_BULLETS = 4
 SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 44, 32
@@ -165,7 +165,6 @@ def main():
             draw_winner(winner_text)
             break
         pygame.init()
-
         keys_pressed = pygame.key.get_pressed()
         yellow_handle_movement(keys_pressed, yellow)
         red_handle_movement(keys_pressed, red)
